@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  Queries   Query[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Query {
+  id             String   @id @default(cuid())
+  name           String
+  included_words String[]
+  excluded_words String[]
+  result         Result[]
+  User           User     @relation(fields: [userId], references: [id])
+  userId         String
+
+  status String @default("pending") // pending, success, failed
+
+  active    Boolean @default(true)
+  alertFlag Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Result {
+  id   String  @id @default(cuid())
+  week String? // ISO week number
+
+  fullSentiment    Float?
+  fullDistribution Json?
+
+  redditMeanSentiment Float?
+  redditDistribution  Json?
+  redditSummary       String?
+  redditVolume        Int?
+  redditTopMentions   Json[]
+
+  blueskyMeanSentiment Float?
+  blueskyDistribution  Json?
+  blueskySummary       String?
+  blueskyVolume        Int?
+  blueskyTopMentions   Json[]
+
+  fullSummary String?
+
+  Query   Query  @relation(fields: [queryId], references: [id], onDelete: Cascade)
+  queryId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
