@@ -1,10 +1,10 @@
 Sentinel is a powerful tool for monitoring social media sentiment. Simply provide a keyword, and Sentinel will:
 
-✅ Extract recent discussion themes
-✅ Analyze sentiment to determine if opinions are positive or negative
-✅ Deliver insightful summaries to help you stay informed
+✅ Extract recent discussion themes<br>
+✅ Analyze sentiment to determine if opinions are positive or negative<br>
+✅ Deliver insightful summaries to help you stay informed<br>
 
-Perfect for brands, researchers, and anyone who wants to understand public perception at a glance.
+Perfect for brands, researchers, and anyone who wants to understand public perception at a glance. <br>
 
 ![image](https://github.com/user-attachments/assets/7575227d-c9cd-4948-9b9d-d2d278b71988)
 ![image](https://github.com/user-attachments/assets/1b9e41c1-bb69-485b-ba5a-f51015a0f08f)
