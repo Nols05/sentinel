@@ -1,3 +1,5 @@
+🎉 Public-vote winner at at UPV ETSINF Fair 2024.
+
 Sentinel is a powerful tool for monitoring social media sentiment. Simply provide a keyword, and Sentinel will:
 
 ✅ Extract recent discussion themes<br>
